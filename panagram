@@ -12,4 +12,4 @@ def panagram(sentence):
     else:
         print("It's not")
         
-panagram("abcdefghijklmnopqrstuvwxyz")
+panagram("The quick brown fox jumps over the lazy dog")
