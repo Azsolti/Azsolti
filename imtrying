@@ -1,0 +1,27 @@
+def write_by_index():
+        numbers_given = []
+        alphabet = "abcdefghijklmnopqrstuvwxyz"
+        sentence = ""
+        limit = len(alphabet)
+        limit = str(limit)
+        enter = input("In this simple program you can write with numbers! Press Enter to continue")
+        
+        askuser = int(input("How many numbers do you want to add? "))
+        
+        for i in range(askuser):
+            inputnum = int(input('Give me a number in the range of ' + limit + ':'))
+            if inputnum > int(limit):
+                print("You exceeded the limit")
+                continue
+            else :
+                numbers_given.append(inputnum)
+        
+        print(" You added " + str(askuser) + " numbers which are " ,numbers_given)
+        
+        for element in numbers_given:
+            sentence += alphabet[element]
+        
+        print("The result of your magical numbers is :", sentence)
+            
+       
+write_by_index()
