@@ -1,0 +1,15 @@
+def panagram(sentence):
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    counter = 0
+    for letter in alphabet:
+            if letter in sentence:
+                counter += 1
+                print("Its in at index: " , sentence.find(letter))
+            else:
+                continue
+    if counter >= len(alphabet):
+        print('Oh yeah')
+    else:
+        print("It's not")
+        
+panagram("abcdefghijklmnopqrstuvwxyz")
