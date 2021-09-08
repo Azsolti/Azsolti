@@ -1,0 +1,36 @@
+import random
+
+import time
+
+timer = 0.0007
+
+def squares(square_sides):
+    
+    numbers = " " * random.randint(1,100) + "0" * square_sides
+    
+    counter = 0
+    
+    print( "\n" )
+    
+    for i in range(square_sides // 2 - 1):
+        
+        
+        for n in range(len(numbers)):
+            
+            
+            
+            print(numbers[counter], sep='', end='', flush=True); time.sleep(timer)
+            
+            counter += 1
+            
+            if counter == len(numbers):
+                
+                counter = 0
+                
+                print("")
+                
+                
+        
+for i in range(random.randint(15,30)):
+    
+    squares(random.randint(15,30))
