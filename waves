@@ -1,0 +1,114 @@
+import time
+import random
+timer = 0.0154
+
+def wave(wavenum):
+    for n in range(wavenum) :   
+        
+        number = 5468434351248684346468749687987498
+        numbers = "5468434351248684346468749687987498"
+        counter = 0
+        counter2 = 0
+        shot = 0
+        while counter2 != len(numbers):
+            print(numbers[:counter2])
+            counter2 += 1
+            time.sleep(timer)
+        
+        while number != 0:
+            number = number // 10
+            print(number)
+            counter += 1
+            time.sleep(timer)
+            #shot += 1
+            # if shot == len(numbers):
+                # for i in range(15):
+                       # print('*'* i, sep=' ', end=' ', flush=True); time.sleep(0.1)
+       
+        
+       
+
+def wave1(wavenum):
+    for n in range(wavenum) :   
+        
+        number = 546843435124868434646874968
+        numbers = "546843435124868434646874968"
+        counter = 0
+        counter2 = 0
+        shot = 0
+        while counter2 != len(numbers):
+            print(numbers[:counter2])
+            counter2 += 1
+            time.sleep(timer)
+        
+        while number != 0:
+            number = number // 10
+            print(number)
+            counter += 1
+            time.sleep(timer)
+            
+            
+def wave2(wavenum):
+    for n in range(wavenum) :   
+        
+        number = 546843435124868434646
+        numbers = "546843435124868434646"
+        counter = 0
+        counter2 = 0
+        shot = 0
+        while counter2 != len(numbers):
+            print(numbers[:counter2])
+            counter2 += 1
+            time.sleep(timer)
+        
+        while number != 0:
+            number = number // 10
+            print(number)
+            counter += 1
+            time.sleep(timer)
+
+
+def wave3(wavenum):
+    for n in range(wavenum) :   
+        
+        number = 5468434351248686
+        numbers = "5468434351248686"
+        counter = 0
+        counter2 = 0
+        shot = 0
+        while counter2 != len(numbers):
+            print(numbers[:counter2])
+            counter2 += 1
+            time.sleep(timer)
+        
+        while number != 0:
+            number = number // 10
+            print(number)
+            counter += 1
+            time.sleep(timer)
+            
+def wave4(wavenum):
+    for n in range(wavenum) :   
+        
+        number = 546843434
+        numbers = "546843434"
+        counter = 0
+        counter2 = 0
+        shot = 0
+        while counter2 != len(numbers):
+            print(numbers[:counter2])
+            counter2 += 1
+            time.sleep(timer)
+        
+        while number != 0:
+            number = number // 10
+            print(number)
+            counter += 1
+            time.sleep(timer)  
+            
+wave(random.randint(1,5))
+wave1(random.randint(1,5))
+wave2(random.randint(1,5))
+wave(random.randint(1,5))
+wave4(random.randint(1,5))
+wave3(random.randint(1,5))
