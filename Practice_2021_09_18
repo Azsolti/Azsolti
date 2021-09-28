@@ -1,0 +1,88 @@
+def remove(string):
+    splitstring = list(string)
+    for n in range(1, len(splitstring), 1):
+        if n >= len(splitstring):
+            break
+        print(n)
+        splitstring.pop(n)
+    return("".join(splitstring))
+        
+print(remove("This is where we remove from"))
+
+
+
+
+def wordcounter(string):
+    string_split  = string.split()
+    dikaz = [w for w in string_split if w == "this"]
+    return len(dikaz)
+    
+    
+
+
+
+def first_three(string):
+    d = ""
+    for c in range(0,len(string)):
+        d += string[c]
+        if c == 2 :
+            break
+            
+    if len(string)> 3 :
+        return(d*4)
+    else:
+        return string*4
+        
+print(first_three("él"))
+
+
+
+
+def reverse(string):
+    reversed_string = ""
+    if len(string) % 4 == 0:
+        for c in range(-1, -len(string)-1, -1):
+           reversed_string += string[c]
+        return reversed_string
+    
+    else : 
+        return "Not a multiplier of 4"
+    
+print(reverse("This will be reversed if its a multiple of 4"))
+
+
+
+def string_check(string):
+    userinput = input("Add a key to check: ")
+    if string[0].lower() == userinput.lower():
+        return "This matches to your input" 
+    else :
+        return "It's not"
+    
+    
+    
+print(string_check("This is a string"))
+
+
+
+import random
+def caesars_cipher(string):
+    char_set = "abcdefghijklmnopqrstuvwxyz "
+    splitted_char_set = [c for c in char_set]
+    encrypted = ""
+    for c in string:
+        if c not in splitted_char_set:
+            c = splitted_char_set[random.randint(0,len(splitted_char_set))]
+        
+        index_of_char = splitted_char_set.index(c)
+
+        encrypted += splitted_char_set[index_of_char-3]
+        
+        
+        
+    print(encrypted)
+    
+        
+            
+        
+print(caesars_cipher(input("Type something to encrypt: ")))
