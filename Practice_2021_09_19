@@ -1,0 +1,22 @@
+def another(string):
+    
+    counter = 0
+    for word in string.lower().split():
+        print(word)
+        for character in word:
+            
+            if word.count(character) > 1 and character != " ":
+                counter += 1
+                print(f" Duplicated {character} found in {word} {counter} times")
+                
+            else:
+              continue
+         
+        counter = 0      
+    if counter > 1:
+        return False
+        
+    else:
+        return True
+            
+print(f'''So the state of checking duplicates is :  {another("Tthis string we will use even if it's True or Not")}''')
