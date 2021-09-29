@@ -1,6 +1,7 @@
-def another(string):
+def check_duplicates(string):
     
     counter = 0
+    true_or_not = 0
     for word in string.lower().split():
         print(word)
         for character in word:
@@ -8,15 +9,20 @@ def another(string):
             if word.count(character) > 1 and character != " ":
                 counter += 1
                 print(f" Duplicated {character} found in {word} {counter} times")
+                true_or_not += 1
                 
             else:
               continue
          
-        counter = 0      
-    if counter > 1:
-        return False
+        counter = 0
+        
+        
+    print(counter)
+    if true_or_not >= 1:
+        
+        return True
         
     else:
-        return True
+        return False
             
-print(f'''So the state of checking duplicates is :  {another("Tthis string we will use even if it's True or Not")}''')
+print(f'''So the state of checking duplicates is :  {check_duplicates("This string we wiiiiiil use ven if it's Triiiue or Nooot")}''')
