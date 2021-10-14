@@ -1,0 +1,125 @@
+class Champion:
+    def __init__(self, name, champ_class, race, side):
+        
+        self.name = name
+        self.champ_class = champ_class
+        self.race = race
+        self.side = side
+        
+    def champ_details(self):
+        print("\nYou chosen the name: {}\nYour class is: {}\nThe race of your Champions is: {}\nAnd you chosen the {} side\n".format(self.name, self.champ_class, self.race, self.side))
+        
+
+
+class Stats:
+    def __init__(self, life, power, energy, quickness):
+        self.life = life
+        self.power = power
+        self.energy = energy
+        self.quickness = quickness
+    
+
+
+
+champ_class_list = ["Warrior","Sorcerer","Trapper","Tricker","Elementalist"]
+race_list = ["Human","Troll","Dwarf","Goblin","Giant"]
+side_list = ["Red","Blue","Purple","Black"]
+
+
+def choose_name():
+    choose_name_1 = input("Please enter your characters name :")
+    chosen_name = choose_name_1
+    return chosen_name
+
+def choose_class():
+    print("Chose your class: ")
+
+    for i in range(0, len(champ_class_list)):
+        print(i, " : ", champ_class_list[i], sep="", end=" ")
+    
+    userinput_class = int(input())
+    return champ_class_list[userinput_class]
+
+def choose_race():    
+    print("Chose your race:")
+    
+    for i in range(0, len(race_list)):
+        print(i, " : ", race_list[i], sep="", end=" ")
+
+    userinput_race = int(input())
+    return race_list[userinput_race]
+
+def choose_side():    
+    print("Chose your side:")
+    
+    for i in range(0, len(side_list)):
+        print(i, " : ", side_list[i], sep="", end=" ")
+        
+    userinput_side = int(input())
+    return side_list[userinput_side]
+    
+name_chosen = choose_name()
+class_chosen = choose_class()
+race_chosen = choose_race()
+side_chosen = choose_side()
+
+character_1 = Champion(name_chosen, class_chosen, race_chosen, side_chosen)
+
+
+
+input_continue = input("Would you like to create another character? Y or N ")
+    
+while input_continue != "Y" or input_continue != "N":  
+    if input_continue == "Y":
+        name_chosen = choose_name()
+        class_chosen = choose_class()
+        race_chosen = choose_race()
+        side_chosen = choose_side()
+        
+        character_2 = Champion(name_chosen, class_chosen, race_chosen, side_chosen)
+        
+        c_2 = True
+        break
+    
+    elif input_continue == "N":
+        
+        print("Okay, you are done\n")
+        c_2 = False
+        break
+    else:
+        input_continue = input("Wrong input! Would you like to create another character? Y or N \n")
+        
+input_continue = input("Would you like to create another character? Y or N \n")
+while input_continue != "Y" or input_continue != "N":  
+    if input_continue == "Y":
+        name_chosen = choose_name()
+        class_chosen = choose_class()
+        race_chosen = choose_race()
+        side_chosen = choose_side()
+        
+        character_3 = Champion(name_chosen, class_chosen, race_chosen, side_chosen)
+        c_3 = True
+        break
+    
+    elif input_continue == "N":
+        
+        print("Okay, you are done\n")
+        c_3 = False
+        break
+    else:
+    
+        input_continue = input("Wrong input! Would you like to create another character? Y or N \n")
+    
+character_1.champ_details()
+if c_2 == True:
+    character_2.champ_details()
+else:
+    pass
+
+if c_3 == True:
+    character_3.champ_details()
+else:
+    pass
+
+print("""Let's go! You've succesfully created your team of Champions, now it's time to roll out their stats.\n The statistics will depend on the mixture of race,class and side.
+Note that there is some powerful combinations if you check the hint tab! """)
