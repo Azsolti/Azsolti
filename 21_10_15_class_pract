@@ -1,0 +1,51 @@
+class Student:
+    def __init__(self, student_id, student_name, student_class, salary):
+        self.student_id = student_id
+        self.student_name = student_name
+        self.student_class = student_class
+        self.salary = salary
+        
+    def raise_salary(self):
+        self.salary *= 1.1
+        
+        
+def salary_raiser():
+    continue_loop = ""
+    while continue_loop != "N":
+        print("Here is your student's list: ")
+        for n in range(0,len(student_list)):
+            print(f"{n}:{student_list[n].student_name}")
+        
+        userinput = len(student_list)
+        while userinput > len(student_list)-1:
+            try:
+                userinput = int(input(f"Which students salary do you want to raise in a range of: 0 - {len(student_list)-1}?"))
+                
+            except:
+                print("Bad character, try again..")
+        
+        selected_student = student_list[userinput]
+        selected_student.raise_salary()    
+        
+        print(f"You succesfully raised {selected_student.student_name}'s salary to: {selected_student.salary} a month")
+    
+    #Loop for repeat and to avoid mistype    
+        
+        
+        continue_loop = input("Do you want to raise another? y or n")
+        if continue_loop.lower() == "y":
+            continue_loop = "Y"
+        elif continue_loop.lower() == "n":
+            continue_loop = "N"
+            break
+        else:
+            print("Invalid input")
+            pass
+
+        
+student_1 = Student("11111", "Jeff Aay", "10A", 1000)
+student_2 = Student("22222", "Jeff Bay", "10B", 1100)
+student_3 = Student("33333", "Jeff Cay", "10C", 900)
+student_4 = Student("44444", "Jeff Day", "10A", 900)
+student_list = [student_1, student_2, student_3, student_4]
+salary_raiser()
