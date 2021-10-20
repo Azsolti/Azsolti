@@ -1,0 +1,128 @@
+import timeit
+
+add_lamb = lambda x : x + 15
+print(add_lamb(10))
+add_lamb_2 = lambda x, y : x*y
+print(add_lamb_2(15,15))
+
+
+#---------------------------------------
+#Multiplies the given number
+
+def lab_func(x):
+    multip_lamb = lambda y : y*x
+    print(multip_lamb(15))
+    
+lab_func(2)
+lab_func(3)
+lab_func(4)
+lab_func(5)
+
+#---------------------------------------
+#Practicing sorting tuples by the values
+
+tup_list = [('English', 88), ('Science', 90), ('Maths', 97), ('Social sciences', 82)]
+tup_list.sort(key = lambda x : x[1])
+print(tup_list)
+
+
+#---------------------------------------
+
+dict_list = [{'make': 'Nokia', 'model': 216, 'color': 'Black'}, {'make': 'Mi Max', 'model': '2', 'color': 'Gold'}, {'make': 'Samsung', 'model': 7, 'color': 'Blue'}]
+sorted_dict = sorted(dict_list, key = lambda x : x["color"])
+print(sorted_dict)
+
+
+#---------------------------------------
+
+
+list_test = timeit.timeit(stmt = "[1,2,3,4,5]", number = 10000)
+tuple_test = timeit.timeit(stmt = "(1,2,3,4,5)", number = 10000)
+print(tuple_test)
+print(list_test)
+
+#---------------------------------------
+
+test_1 = 1,
+test_2 = 1, 2
+test_3 = 1, 2, 3
+
+print(type(test_1))
+print(type(test_2))
+print(type(test_3))
+
+#---------------------------------------
+
+#(age, country, knows_python)
+survey = (27, "Vietnam", True)
+
+age = survey[0]
+country = survey[1]
+knows_python = survey[2]
+
+survey_2 = (21, "Switzerland", True)
+age, country, knows_python = survey_2
+if knows_python == True:
+    knows_python = "knows Python"
+else:
+    knows_python = "doesn't know Python"
+print(f"His/Her age is {age}, He/She is from {country} and He/She {knows_python}")
+
+#---------------------------------------
+
+
+fname_lname_age_country_haircolor = ("Brian", "May", 26, "Afghanistan", "Brown")
+fname, lname, age, country, hair_color = fname_lname_age_country_haircolor
+print(f"First name: {fname.upper()}\nLast name: {lname.upper()}\nAge: {age}\nCountry: {country}\nColor of hair: {hair_color}")
+
+
+    
+#---------------------------------------
+
+pract_dict = {"Name" : "Zsolt", "Age" : 33, "Hair color" : "Brown"}
+pract_dict["Name"] = "Mária"
+print(pract_dict["Name"])
+
+#Another way to create a dictionary:
+pract_identity = dict(Name="Zsolt", Age=33, Hair_color="Brown")
+print(pract_identity)
+
+#Adding new K-V pairs to the dictionary:
+pract_identity["Height"] = 190
+pract_identity["Weight"] = 86
+print(pract_identity)
+
+#Printing a value by key:
+print(pract_identity["Height"])
+
+#Trying to print out a key that is not exists:
+# print(pract_identity["Vaccinated"])
+
+#Resolving previous issue with a check:
+
+if "Vaccinated" in pract_identity:
+    print(pract_identity["Vaccinated"])
+else:
+    print("No information about vaccination")
+ 
+# Same, shorter code with the .get() method   
+
+print(pract_identity.get("Vaccinated", "No information about vaccination"))
+
+# If the key exists, it returns the value of it:
+
+print(pract_identity.get("Age"))
+
+# Let's see iterations with the .keys() method:
+
+for key in pract_identity.keys():
+    value = pract_identity[key]
+    print(key, "=", value)
+    
+    
+# And with .items() method the same looks like: 
+
+for key, value in pract_identity.items():
+    print(key, "=", value)
+    
+print(pract_identity.items())
