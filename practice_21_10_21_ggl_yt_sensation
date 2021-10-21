@@ -1,0 +1,69 @@
+phone_number = "9999999"
+words = ["foo","bar","baz","foobar","emo","cap","car","cat","it","is","good"]
+phone_number = list(phone_number)
+charset = []
+word_set = []
+
+#Function to pair letters and keys:
+
+def check_for_letters(num):
+    if num == 1 or num == 0:
+        return(" ")
+    elif num == 2:
+        return ["a","b","c"]
+        
+    elif num == 3:
+        return ["d","e","f"]
+        
+    elif num == 4:
+        return ["g","h","i"]
+        
+    elif num == 5:
+        return ["j","k","l"]
+        
+    elif num == 6:
+        return ["m","n","o"]
+        
+    elif num == 7:
+        return ["p","q","r","s"]
+        
+    elif num == 8:
+        return ["t","u","v","w"]
+        
+    elif num == 9:
+        return ["x","y","z"]
+        
+    else:
+        print("Invalid input")
+        
+#Making a list of characters which will be used :
+
+for number in phone_number:
+    charset.append(check_for_letters(int(number)))
+        
+#Merging the list to individual elements in the list instead of nested list:
+
+charset = [x for y in charset for x in y]
+print(charset)
+for i in words:
+    word_set.append(i)
+ 
+words_found = ""
+
+# Temp will be important in the next step when we iterate through the words:
+
+temp_set = charset.copy()
+
+#The iteration of available characters and the words we have:
+
+for word in words:
+    for letter in word:
+        charset = temp_set.copy()
+        if letter in charset:
+            words_found += letter
+            charset.remove(letter)
+            
+print("The following words are in : ")           
+for word in words:
+    if word in words_found:
+        print(f"{word.capitalize()}")
