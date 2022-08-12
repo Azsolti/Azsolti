@@ -1,0 +1,36 @@
+def dict_pract():
+    apples = {
+        "Golden": 10, 
+        "Jonathan": 20,
+        "Silver": 30
+    }
+    for x,y in apples.items():
+        print(x, ":", y)
+        
+dict_pract()
+
+
+class Apples:
+    def __init__(self, apple_type, amount_in_stock, price):
+        self.apple_type = apple_type
+        self.amount_in_stock = amount_in_stock
+        self.price = price
+        
+    def calculate(self):
+        return self.amount_in_stock * self.price
+        
+    def calculate_discount(self):
+        usr = input("Add a discount amount: ")
+        print("The discounted price is:" , (self.amount_in_stock * self.price) - (int(usr)/100) * (self.amount_in_stock * self.price))
+        
+    
+        
+        
+cox = Apples("Cox", 50, 300)
+braeburn = Apples("Braeburn", 149, 500)
+pink_lady = Apples("Pink lady", 300, 499)
+fuji = Apples("Fuji", 258, 356)
+    
+print(cox.calculate())
+cox.calculate_discount()
+print(braeburn.calculate())
