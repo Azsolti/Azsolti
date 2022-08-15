@@ -11,7 +11,8 @@ class Todolist:
         self.task_details = task_details
         self.importance = importance
 
-    def view(self):
+    @staticmethod
+    def view():
         for i in range(1):
             print("DATE: ", todo_list[int(usr_chose)].date, end="\n")
             print("TASKNAME: ", todo_list[int(usr_chose)].taskname, end="\n")
@@ -29,8 +30,8 @@ def opener():
             counter += 1
 
         usr_chose = input("Which task would you like to view?\n")
-        if usr_chose.isnumeric() == True:
-            if usr_chose.isnumeric() == True and 0 <= int(usr_chose) < len(todo_list):
+        if usr_chose.isnumeric():
+            if usr_chose.isnumeric() and 0 <= int(usr_chose) < len(todo_list):
                 todo_list[int(usr_chose)].view()
 
             else:
@@ -61,7 +62,7 @@ def creator():
         counter = 0
 
         if cont_input.lower() == "y":
-            todo_1 = Todolist(date,taskname, task_details, importance)
+            todo_1 = Todolist(date, taskname, task_details, importance)
             todo_list.append(todo_1)
             counter += 1
             print("Your to-do list contains", counter, "elements:\n")
@@ -100,7 +101,7 @@ def deleter():
             for n in todo_list:
                 print(str(counter), ":", n.taskname, "\n")
             usr_in = input("")
-            if usr_in.isnumeric() == True:
+            if usr_in.isnumeric() and int(usr_in) < len(todo_list):
                 for n in todo_list:
                     print(str(counter), ":", n.date, n.taskname, n.task_details, n.importance)
                     counter += 1
@@ -146,6 +147,5 @@ def mainmenu():
         quit()
 
 
-while closeprog == True:
+while closeprog:
     mainmenu()
-
