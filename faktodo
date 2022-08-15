@@ -1,89 +1,91 @@
 import time
+
 todo_list = []
 closeprog = True
+
+
 class Todolist:
     def __init__(self, date, taskname, task_details, importance):
-        self.taskname = taskname
         self.date = date
+        self.taskname = taskname
         self.task_details = task_details
         self.importance = importance
-    
+
     def view(self):
         for i in range(1):
-            print("DATE: ", todo_list[int(usr_chose)].date, end="\n" )
-            print("TASKNAME: ", todo_list[int(usr_chose)].taskname,end="\n")
-            print("TASK DETAILS: ", todo_list[int(usr_chose)].task_details, end="\n" )
-            print("PRIORITY: " , todo_list[int(usr_chose)].importance)
-            
-            
+            print("DATE: ", todo_list[int(usr_chose)].date, end="\n")
+            print("TASKNAME: ", todo_list[int(usr_chose)].taskname, end="\n")
+            print("TASK DETAILS: ", todo_list[int(usr_chose)].task_details, end="\n")
+            print("PRIORITY: ", todo_list[int(usr_chose)].importance)
+
+
 def opener():
     counter = 0
     global usr_chose
     if len(todo_list) >= 1:
         print("Here is the list of your tasks: \n")
         for n in range(len(todo_list)):
-            print(counter, ":" ,todo_list[counter].taskname)
+            print(counter, ":", todo_list[counter].taskname)
             counter += 1
-        
-        
+
         usr_chose = input("Which task would you like to view?\n")
         if usr_chose.isnumeric() == True:
-            if usr_chose.isnumeric() == True and  0 <= int(usr_chose) < len(todo_list):
+            if usr_chose.isnumeric() == True and 0 <= int(usr_chose) < len(todo_list):
                 todo_list[int(usr_chose)].view()
-  
+
             else:
                 pass
 
         else:
             r = "Invalid input!!"
             for c in r:
-                print(c,sep=" ",end=" ")
+                print(c, sep=" ", end=" ")
                 time.sleep(.2)
-                
+
         time.sleep(2)
-     else:
-        
+    else:
+
         print("Empty list, returning to main menu")
         time.sleep(1)
-  
+
 
 def creator():
     while True:
-        taskname = input("Now, type the name of the task: \n")
         date = input("Type in the date of the task:\n")
+        taskname = input("Now, type the name of the task: \n")
         task_details = input("Write detailed information if needed:\n")
         importance = input("Choose importance:\n")
         print(taskname.upper(), "Has been added to your to-do list!")
         cont_input = input("Would you like to add another task?\n")
 
         counter = 0
-        
+
         if cont_input.lower() == "y":
-            todo_1 = Todolist(taskname,date, task_details,importance)
+            todo_1 = Todolist(date,taskname, task_details, importance)
             todo_list.append(todo_1)
             counter += 1
             print("Your to-do list contains", counter, "elements:\n")
             for n in todo_list:
-                print(str(counter),":")
-                print(str(counter),":", n.taskname,"\n")    
+                print(str(counter), ":")
+                print(str(counter), ":", n.taskname, "\n")
             continue
-            
+
         elif cont_input.lower() == "n":
-            todo_1 = Todolist(taskname,date, task_details,importance)
+            todo_1 = Todolist(date, taskname, task_details, importance)
             todo_list.append(todo_1)
             counter += 1
             print("Your to-do list contains", counter, "elements:\n")
             for n in todo_list:
-                print(str(counter),":", n.taskname,"\n")
-           
+                print(str(counter), ":", n.taskname, "\n")
+
             print("Returning to main menu", end="")
             for n in range(3):
                 print(".", end="")
                 time.sleep(0.6)
             break
-        
+
         else:
-            todo_1 = Todolist(taskname,date, task_details,importance)
+            todo_1 = Todolist(date, taskname, task_details, importance)
             todo_list.append(todo_1)
             counter += 1
             print("Invalid input")
@@ -96,39 +98,40 @@ def deleter():
         if len(todo_list) >= 1:
             print("Which task do you want to delete?\n")
             for n in todo_list:
-                print(str(counter),":", n.taskname,"\n")
-            usr_in = input("")    
+                print(str(counter), ":", n.taskname, "\n")
+            usr_in = input("")
             if usr_in.isnumeric() == True:
                 for n in todo_list:
-                    print(str(counter),":", n.taskname, n.date, n.task_details, n.importance)
+                    print(str(counter), ":", n.date, n.taskname, n.task_details, n.importance)
                     counter += 1
-            
+
             else:
                 print("Invalid input!")
                 continue
-                
+
             usr_in2 = input("Are you sure? Y or N ")
             if usr_in2.lower() == "y":
                 if len(todo_list) >= 1:
                     todo_list.pop(int(usr_in))
-                    print("Succesfully deleted item ",usr_in)
-                
+                    print("Succesfully deleted item ", usr_in)
+
         else:
             print("Empty list")
             print("Returning to main menu")
             time.sleep(1)
             break
-        
+
         ask_again = input("would you like to continue? Y or N ")
         if ask_again.lower() == "y":
             continue
-        
+
         else:
             print("Quitting")
             time.sleep(1.5)
-                
+
             break
-        
+
+
 def mainmenu():
     print("Welcome to your to-do manager! Navigate through the menu with the help of your keyboard.\n")
     menu_input = input("1: Create new task\n2: Delete existing task\n3: View your to-do list\n4: Quit program")
@@ -141,8 +144,8 @@ def mainmenu():
     else:
         print("Quitting the program")
         quit()
-        
-        
-        
+
+
 while closeprog == True:
     mainmenu()
+
