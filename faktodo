@@ -135,7 +135,7 @@ def deleter():
 
 def mainmenu():
     print("Welcome to your to-do manager! Navigate through the menu with the help of your keyboard.\n")
-    menu_input = input("1: Create new task\n2: Delete existing task\n3: View your to-do list\n4: Quit program")
+    menu_input = str(input("1: Create new task\n2: Delete existing task\n3: View your to-do list\n4: Quit program"))
     if menu_input == str(1):
         creator()
     elif menu_input == str(2):
