@@ -100,26 +100,26 @@ def check_fileexists_X118():
 
 def create_xml_backup():
     for file_path_W177 in existing_path_W177:
-        shutil.copy2(str(file_path_W177), "D:\\BestFit\\AbgleichBackup")
+        shutil.copy2(str(file_path_W177), "D:\\BestFit\\BackupBestFit\\AbgleichBackup")
 
     for file_path_C118 in existing_path_C118:
-        shutil.copy2(str(file_path_C118), "D:\\BestFit\\AbgleichBackup")
+        shutil.copy2(str(file_path_C118), "D:\\BestFit\\BackupBestFit\\AbgleichBackup")
 
     for file_path_X118 in existing_path_X118:
-        shutil.copy2(str(file_path_X118), "D:\\BestFit\\AbgleichBackup")
+        shutil.copy2(str(file_path_X118), "D:\\BestFit\\BackupBestFit\\AbgleichBackup")
 
     backup_created = Label(root, bg='light yellow', fg='green', font=('Arial', 10, 'italic'),
-                           text='Automatikus biztonsági mentés elkészült D:\BestFit\AbgleichBackup')
+                           text='Automatikus biztonsági mentés elkészült D:\BestFit\BackupBestFit\AbgleichBackup')
     backup_created.pack(anchor='s', pady=10)
 
 
 def restore_xml_backup():
     ask_question = messagebox.askquestion('Figyelmeztetés', 'Valóban visszatöltöd a biztonsági másolatot?')
     if ask_question == 'yes':
-        backup_files = os.listdir("D:\\BestFit\\AbgleichBackup")
+        backup_files = os.listdir("D:\\BestFit\\BackupBestFit\\AbgleichBackup")
 
         for file_path, backup_path in zip(backup_files, backup_pathlist):
-            shutil.copy2("D:\\BestFit\\AbgleichBackup\\" + file_path, backup_path)
+            shutil.copy2("D:\\BestFit\\BackupBestFit\\AbgleichBackup" + file_path, backup_path)
 
         open_button_W177["state"] = "normal"
         open_button_W177['font'] = ('Arial', 29, 'bold')
