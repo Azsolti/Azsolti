@@ -145,14 +145,14 @@ def restore_xml_backup():
 
         open_button_W177["state"] = "normal"
         open_button_W177['font'] = ('Arial', 29, 'bold')
-        open_button_W177["text"] = "Open W177 file"
+        open_button_W177["text"] = "W177 fájl megnyitás"
         open_button_W177["bd"] = 10
         open_button_C118["state"] = "normal"
-        open_button_C118["text"] = "Open C118 file"
+        open_button_C118["text"] = "C118 fájl megnyitás"
         open_button_C118['font'] = ('Arial', 30, 'bold')
         open_button_C118["bd"] = 10
         open_button_X118["state"] = "normal"
-        open_button_X118["text"] = "Open X118 file"
+        open_button_X118["text"] = "X118 fájl megnyitás"
         open_button_X118['font'] = ('Arial', 30, 'bold')
         open_button_X118["bd"] = 10
         backup_button['state'] = 'disabled'
