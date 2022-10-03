@@ -394,22 +394,21 @@ def setmeasurement_pointc118(document):
     curr_date = date.today()
     currtext = 'Offset_update_log_' + str(curr_date) + '.txt'
 
-
     for element in root.iter('Double'):
-
         get_tagName = element.get('name')
         get_pointValue = element.get('value')
 
         if get_tagName == 'Offset' and len(final_strlist) > 0:
-
             element.set('value', str(final_strlist[0]))
 
             result = float(get_pointValue) - float(element.get('value'))
             if abs(result) > 1:
                 value_popup(final_keylist[0], result)
+                
             with open(currtext, 'a+') as logfile:
                 logfile.write(f'\nOffset {final_keylist[0]} updated from {get_pointValue} to {element.get("value")}'
                               f' in:\n {document}\n')
+                
             with open(final_logfilevar, 'a+') as logfile_2:
                 logfile_2.write(f'\nOffset {final_keylist[0]} updated from {get_pointValue} to {element.get("value")}'
                                 f'in:\n {document} \n')
@@ -422,7 +421,6 @@ def setmeasurement_pointc118(document):
         log.truncate(0)
 
     messagebox.showinfo('Log notification', f' {read} ')
-
     pointnames_got.clear()
     values_got.clear()
     xml_origdata.clear()
