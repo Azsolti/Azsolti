@@ -6,7 +6,9 @@ from tkinter import messagebox
 from datetime import *
 import os
 import os.path
+import psutil
 import shutil
+import time
 
 
 root = Tk()
@@ -291,15 +293,39 @@ def start_program_X118():
             messagebox.showerror('Invalid file', 'Please select the correct TXT file')
 
 
-def exit_program():
-    ask_exit = messagebox.askquestion('Notification', 'Do you really want to quit?')
-    if ask_exit == 'yes':
-        root.destroy()
-        exit()
-
+def ask_include():
+    ask_includexml = messagebox.askquestion("Notification!", "Did you included XML files and want to quit?")
+    if ask_includexml == "yes":
+       return "yes" 
     else:
-        pass
+       return "no"
+             
+ 
+def kill_visu_start_bf():
+    visu = "BestFitVisu.exe"
+    
+    for proc in psutil.process_iter():
+        if proc.name() == visu:
+            proc.kill()
+            
+    while True:    
+        for proc in psutil.process_iter():
+            if proc.name() == visu:
+                messagebox.showerror("Notification", "Please wait a few seconds, Visu did not close yet") 
+                time.sleep(3)
+            else:
+                os.startfile("D://BestFit//BestFit.exe")
+                break
+              
 
+def exit_program():
+    if ask_include() == "yes":
+       kill_visu_start_bf()
+       root.destroy()
+       exit()
+    else:
+        messagebox.showinfo("Notification", "Please include XML files")    
+        
 
 def open_file():
     filepath = filedialog.askopenfilename(title='Select the .txt file', filetypes=(("txt files", "*.txt"),
@@ -308,7 +334,7 @@ def open_file():
         return str(filepath)
 
 
-def popup(pname, pvalue):
+def value_popup(pname, pvalue):
     return messagebox.showinfo('Value warning', f'ATTENTION: more than 1.00mm offset in {pname}:{pvalue},'
                                                 f' check if correct')
 
@@ -357,7 +383,7 @@ def setmeasurement_pointc118(document):
 
             result = float(get_pointValue) - float(element.get('value'))
             if abs(result) > 1:
-                popup(final_keylist[0], result)
+                value_popup(final_keylist[0], result)
             with open(currtext, 'a+') as logfile:
                 logfile.write(f'\nOffset {final_keylist[0]} updated from {get_pointValue} to {element.get("value")}'
                               f' in:\n {document}\n')
