@@ -31,7 +31,14 @@ path_list_W177 = ["D:\BestFit\AuditTypes_Left\\010_W177_FD_LI.xml",
                   "D:\BestFit\AuditTypes_STS_vo_Right\\011_W177_STS_vo_re.xml",
                   "D:\BestFit\AuditTypes\Type_W177\\11_W177_KV_LBR_Links.xml",
                   "D:\BestFit\AuditTypes\Type_W177\\11_W177_KV_LBR_Rechts.xml",
-                  "D:\BestFit\AuditTypes_MH\\010_W177_MH.xml"
+                  "D:\BestFit\AuditTypes_MH\\010_W177_MH.xml",
+                  "D:\BestFit\AuditTypes_KH_Left\\020_W177_AMG_KH_LI.xml",
+                  "D:\BestFit\AuditTypes_KH_Right\\020_W177_AMG_KH_RE.xml",
+                  "D:\BestFit\AuditTypes_MH\\020_W177_AMG_MH.xml",
+                  "D:\BestFit\AuditTypes_STS_vo_Left\\021_W177_AMG_STS_vo_li.xml",
+                  "D:\BestFit\AuditTypes_STS_vo_Right\\021_W177_AMG_STS_vo_re.xml",
+                  "D:\BestFit\AuditTypes\Type_W177_AMG\\12_W177_KV_LBR_Links_AMG.xml",
+                  "D:\BestFit\AuditTypes\Type_W177_AMG\\12_W177_KV_LBR_Rechts_AMG.xml"
                   ]
 
 path_list_C118 = ["D:\BestFit\AuditTypes_Left\\100_C118_FD_LI.xml",
@@ -45,7 +52,15 @@ path_list_C118 = ["D:\BestFit\AuditTypes_Left\\100_C118_FD_LI.xml",
                   "D:\BestFit\AuditTypes_STS_vo_Right\\101_C118_STS_vo_re.xml",
                   "D:\BestFit\AuditTypes\Type_C118\\21_C118_KV_LBR_Links.xml",
                   "D:\BestFit\AuditTypes\Type_C118\\21_C118_KV_LBR_Rechts.xml",
-                  ]
+                  "D:\BestFit\AuditTypes_MH\\120_C118_AMG_MH.xml",
+                  "D:\BestFit\AuditTypes_STS_vo_Left\\121_C118_AMG_STS_vo_li.xml",
+                  "D:\BestFit\AuditTypes_STS_vo_Right\\121_C118_AMG_STS_vo_re.xml",
+                  "D:\BestFit\AuditTypes\Type_C118_AMG\\22_C118_KV_LBR_Links_AMG.xml",
+                  "D:\BestFit\AuditTypes\Type_C118_AMG\\22_C118_KV_LBR_Rechts_AMG.xml",
+                  "D:\BestFit\AuditTypes_KH_Left\120_C118_AMG_KH_LI.xml",
+                  "D:\BestFit\AuditTypes_KH_Right\120_C118_AMG_KH_RE.xml",
+                  "D:\BestFit\AuditTypes_MH\120_C118_AMG_MH.xml"                  
+                 ]
 
 path_list_X118 = ["D:\BestFit\AuditTypes_Left\\140_X118_FD_LI.xml",
                   "D:\BestFit\AuditTypes_Right\\140_X118_FD_RE.xml",
@@ -59,6 +74,13 @@ path_list_X118 = ["D:\BestFit\AuditTypes_Left\\140_X118_FD_LI.xml",
                   "D:\BestFit\AuditTypes_STS_vo_Right\\141_X118_STS_vo_re.xml",
                   "D:\BestFit\AuditTypes\Type_X118\\31_X118_KV_LBR_Links.xml",
                   "D:\BestFit\AuditTypes\Type_X118\\31_X118_KV_LBR_Rechts.xml"
+                  "D:\BestFit\AuditTypes_MH\\160_X118_AMG_MH.xml"
+                  "D:\BestFit\AuditTypes_STS_vo_Left\\161_X118_AMG_STS_vo_li.xml"
+                  "D:\BestFit\AuditTypes_STS_vo_Right\\161_X118_AMG_STS_vo_re.xml"
+                  "D:\BestFit\AuditTypes\Type_X118_AMG\\32_X118_KV_LBR_Links_AMG.xml"
+                  "D:\BestFit\AuditTypes\Type_X118_AMG\\32_X118_KV_LBR_Rechts_AMG.xml"
+                  "D:\BestFit\AuditTypes_KH_Left\160_X118_AMG_KH_LI.xml"
+                  "D:\BestFit\AuditTypes_KH_Right\160_X118_AMG_KH_RE.xml"
                   ]
 
 existing_path_W177 = []
