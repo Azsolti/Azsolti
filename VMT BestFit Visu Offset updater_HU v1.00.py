@@ -486,7 +486,7 @@ backup_button.pack()
 backup_button.bind("<Enter>", on_enter_backup)
 backup_button.bind("<Leave>", on_leave_backup)
 
-exit_button = Button(root, text="Exit program", font=("Arial", 15), command=exit_program)
+exit_button = Button(root, text="Kilépés", font=("Arial", 15), command=exit_program)
 exit_button.pack(pady=30)
 exit_button.bind("<Enter>", on_enter_exit)
 exit_button.bind("<Leave>", on_leave_exit)
